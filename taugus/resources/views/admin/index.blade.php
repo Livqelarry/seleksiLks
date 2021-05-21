@@ -4,7 +4,7 @@
 <div class="container">
     <div class="d-flex justify-content-between">
         <div>
-            <h4>All post</h4>
+            <h4>All post Admin</h4>
             <hr>
         </div>
         <div>
@@ -21,7 +21,7 @@
                 </div>
                 <div class="card-body">
                     <div>
-                        {{Str::limit($post->deskripsi,3)}}
+                        {{Str::limit($post->deskripsi,10)}}
                     </div>
                     <a href="/admin/{{ $post->slug }}">Read More</a>
                 </div>
