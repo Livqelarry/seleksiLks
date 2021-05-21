@@ -93,9 +93,10 @@ class PostController extends Controller
      */
     public function update(Post $post)
     {
-
-        // validate
-        $this->validateRequest();
+        $buku = request()->validate([
+            'judul' => 'required|min:3|max:12',
+            'deskripsi' => 'required'
+        ]);
 
         $post->update($buku);
         
@@ -109,8 +110,10 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($slug)
     {
-        //
+        Post::where('slug',$slug)->first()->delete();
+
+        return back();
     }
 }

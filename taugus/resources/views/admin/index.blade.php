@@ -25,9 +25,10 @@
                     </div>
                     <a href="/admin/{{ $post->slug }}">Read More</a>
                 </div>
-                <div class="card-footer d-flex justify-content-between">
+                <div class="card-footer d-flex flex-column">
                     Published on {{$post->created_at->diffForHumans()}}
-                    <a href="/admin/{{ $post->slug }}/edit" class="btn btn-sm btn-success">Perbarui</a>
+                    <a href="/admin/{{ $post->slug }}/edit" class="btn btn-sm btn-success mt-2">Perbarui</a>
+                    <a href="{{route('post.hapus',$post->slug)}}" class="btn btn-sm btn-danger mt-2">Hapus</a>
                 </div>
             </div>
         </div>
